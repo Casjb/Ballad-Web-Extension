@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>oauth relay</title>
+<script>
+    const p = new URLSearchParams(location.search);
+    const code  = p.get('code') || '';
+    const state = p.get('state') || '';
+    const error = p.get('error') || '';
+    const [extId] = state.split(':');
+
+    if (!extId) {
+        document.body.textContent = 'missing extension id in state';
+    } else {
+        const tgt = `https://${extId}.chromiumapp.org/cb?` +
+            new URLSearchParams({ code, state, error }).toString();
+        location.replace(tgt);
+    }
+</script>

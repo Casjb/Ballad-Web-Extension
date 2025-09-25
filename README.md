@@ -22,7 +22,8 @@ mv3 extension that reads your balatrodle stats from localstorage and posts them 
 - load unpacked:
   - visit `chrome://extensions/`
   - enable developer mode
-  - load folder containing `manifest.json`, `dist/`, `icons/` (exclude all other files to ensure extension id matches)
+  - load folder containing `manifest.json`, `dist/`, `icons/` 
+  - copy extension id, change background.js to use that id, then re-unpack extension
   folder should look this this:
    /root
    |-- dist/

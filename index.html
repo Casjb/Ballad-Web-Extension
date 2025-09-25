@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballad - Balatrodle Stats Chrome Extension</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #5a67d8;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #5a67d8;
+        }
+
+        .feature h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .install-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #5a67d8, #667eea);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(90, 103, 216, 0.3);
+        }
+
+        .install-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 103, 216, 0.4);
+        }
+
+        .install-button:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech {
+            background: #e2e8f0;
+            color: #2d3748;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        .github-link {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎴 Ballad</h1>
+            <p>Chrome Extension for Balatrodle Stats Tracking</p>
+        </header>
+
+        <div class="card">
+            <img src="icons/icon128.png" alt="Ballad Extension Icon" class="icon">
+            <h2>🎯 What is Ballad?</h2>
+            <p>Ballad is a Chrome extension that enhances your <strong>Balatrodle</strong> gaming experience by automatically tracking your game statistics and integrating them with Discord. Never lose track of your wins, streaks, and performance metrics again!</p>
+            
+            <p style="margin-top: 15px;"><em>Balatrodle is a daily word-guessing game inspired by Wordle, but themed around the popular card game Balatro.</em></p>
+        </div>
+
+        <div class="card">
+            <h2>✨ Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>📊 Stats Tracking</h3>
+                    <p>Automatically captures your wins, streaks, and average guess count from Balatrodle.</p>
+                </div>
+                <div class="feature">
+                    <h3>🔗 Discord Integration</h3>
+                    <p>Links with your Discord account for seamless stat sharing and community features.</p>
+                </div>
+                <div class="feature">
+                    <h3>📈 Performance Analytics</h3>
+                    <p>Track your progress over time with detailed performance metrics and insights.</p>
+                </div>
+                <div class="feature">
+                    <h3>🤖 Webhook Support</h3>
+                    <p>Automatically posts your achievements to Discord channels via webhooks.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚀 Installation</h2>
+            <p>Currently, this extension is in development. To install:</p>
+            <ol style="margin: 15px 0; padding-left: 20px;">
+                <li>Clone or download this repository</li>
+                <li>Open Chrome and navigate to <code>chrome://extensions/</code></li>
+                <li>Enable "Developer mode" in the top right corner</li>
+                <li>Click "Load unpacked" and select the extension folder</li>
+                <li>The extension will appear in your Chrome toolbar</li>
+            </ol>
+            
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="#" class="install-button" disabled onclick="return false;" style="cursor: not-allowed;">
+                    📦 Chrome Web Store (Coming Soon)
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🛠 Technical Details</h2>
+            <p>Built with modern web technologies for optimal performance and security:</p>
+            <div class="tech-stack">
+                <span class="tech">TypeScript</span>
+                <span class="tech">Chrome Extensions API</span>
+                <span class="tech">Discord OAuth2</span>
+                <span class="tech">Local Storage</span>
+                <span class="tech">Manifest V3</span>
+            </div>
+            
+            <p style="margin-top: 20px;">
+                <strong>Supported Sites:</strong> balatrodle.com<br>
+                <strong>Permissions:</strong> Identity, Tabs, Storage<br>
+                <strong>Version:</strong> 1.0.0
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🔐 Privacy & Security</h2>
+            <p>Your privacy is important to us:</p>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li>Only accesses balatrodle.com for stat collection</li>
+                <li>Discord integration is optional and user-controlled</li>
+                <li>No personal data is stored beyond what's necessary for functionality</li>
+                <li>All data remains local to your browser unless explicitly shared</li>
+            </ul>
+        </div>
+
+        <footer class="footer">
+            <p>
+                Made with ❤️ for the Balatrodle community<br>
+                <a href="https://github.com/Casjb/Ballad-Extension" class="github-link" target="_blank">
+                    📂 View on GitHub
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Check if running on balatrodle.com and show special message
+            if (window.location.hostname.includes('balatrodle')) {
+                const specialMessage = document.createElement('div');
+                specialMessage.className = 'card';
+                specialMessage.style.background = 'linear-gradient(45deg, #f093fb 0%, #f5576c 100%)';
+                specialMessage.style.color = 'white';
+                specialMessage.innerHTML = '<h2>🎮 Extension Active!</h2><p>The Ballad extension is currently tracking your Balatrodle stats on this page.</p>';
+                document.querySelector('.container').insertBefore(specialMessage, document.querySelector('.footer'));
+            }
+        });
+    </script>
+</body>
+</html>

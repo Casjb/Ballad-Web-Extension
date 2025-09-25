@@ -1,9 +1,19 @@
+// IMPORTANT: redirect uri below only works for file structure of:
+/*
+            /root
+            |-- dist/
+            |-- icons/
+            `-- manifest.json
+ */
+// any other package configuration will result in a differing extension key, breaking the uri.
+// this can be fixed when the extension is approved and on the web store
+
 const clientId: string = '1419429683283492915'
 const clientSecret: string = '-eKFnPxMajF0lc3aYrpeuS9robquDu0N'
 const redirectUri: string =
     `https://elmjgoniopidhkghhfgojbmodackgbnd.chromiumapp.org`
 const oAuthUrl: string =
-    `https://discord.com/oauth2/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}%2F&scope=identify`
+    `https://discord.com/oauth2/authorize?client_id=1419429683283492915&response_type=code&redirect_uri=https%3A%2F%2Fedodmhmplbbkmibhnllndmakgfjdjhmi.chromiumapp.org%2F&scope=identify`
 const webhookUrl = 'https://discord.com/api/webhooks/1420186646384738345/z5RAvjkRBY9PzWRR4fbI2EHUXPJGeIt70utm4DTrhUzZKQMGrult2HAu3ZVb-vm4sLIg';
 
 // oauth flow after initial installation:
@@ -57,7 +67,7 @@ chrome.runtime.onMessage.addListener(async (message: any) => {
     console.log('got message:', message);
     if (message.type != 'stats') return
     const { discordUser: {id, username} } = await chrome.storage.local.get('discordUser');
-    const { wins, streak, lastWin, average } = await message.content;
+    const { wins, streak, lastWin, average } = message.data;
 
     // send data to discord webhook channel
     await fetch(webhookUrl, {

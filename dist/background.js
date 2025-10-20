@@ -1,6 +1,6 @@
 "use strict";
 const clientId = '1419429683283492915';
-const clientSecret = '-eKFnPxMajF0lc3aYrpeuS9robquDu0N';
+const clientSecret = '';
 const redirectUri = `https://elmjgoniopidhkghhfgojbmodackgbnd.chromiumapp.org`;
 const oAuthUrl = `https://discord.com/oauth2/authorize?client_id=1419429683283492915&response_type=code&redirect_uri=https%3A%2F%2Fedodmhmplbbkmibhnllndmakgfjdjhmi.chromiumapp.org%2F&scope=identify`;
 const webhookUrl = 'https://discord.com/api/webhooks/1420186646384738345/z5RAvjkRBY9PzWRR4fbI2EHUXPJGeIt70utm4DTrhUzZKQMGrult2HAu3ZVb-vm4sLIg';

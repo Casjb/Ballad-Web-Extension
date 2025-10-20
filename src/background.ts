@@ -11,7 +11,7 @@
 
 const extensionId = 'edodmhmplbbkmibhnllndmakgfjdjhmi'
 const clientId: string = '1419429683283492915'
-const clientSecret: string = '-eKFnPxMajF0lc3aYrpeuS9robquDu0N'
+const clientSecret: string = '' // todo: setup backend for sensitive data and hosting 
 const redirectUri: string =
     `https://${extensionId}.chromiumapp.org`
 const oAuthUrl: string =

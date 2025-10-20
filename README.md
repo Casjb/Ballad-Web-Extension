@@ -1,3 +1,5 @@
+<img src="https://th.bing.com/th/id/OIG1.oepuEib_aTBGIOJCd8kG?w=206&h=206&c=6&o=5&pid=ImgGn" alt="" height="100">
+
 # Ballad Web Extension
 
 mv3 extension that reads your balatrodle stats from localstorage and posts them to a private discord channel after a one-time discord oauth. no db.

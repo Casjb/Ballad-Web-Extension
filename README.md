@@ -2,12 +2,13 @@
 
 # Ballad Web Extension
 
-mv3 extension that reads your balatrodle stats from localstorage and posts them to a private discord channel after a one-time discord oauth. no db.
+mv3 extension that reads your <a href="https://www.balatrodle.com/">balatrodle.com</a> stats from localstorage and posts them to a private discord channel after a one-time discord oauth. no DB.
 
 ## what it does
 - on install: opens discord oauth; you approve the identify scope (username + id only)
 - caches your discord user in chrome storage
 - on visiting balatrodle.com: reads stats (wins, streak, avg guesses, last win), logs them, and posts an embed to a discord webhook
+- this channel is read by a discord bot to display user stats when interacting with my balatrodle discord integration
 - never touches dms, servers, or non‑public discord data
 
 ## quick start (user)
